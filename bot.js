@@ -38,9 +38,9 @@ bot.on("message:text", async (ctx) => {
     userSearches.set(ctx.chat.id, { query, page: 1 });
 
     for (const image of images) {
-        const caption = `📸 *Tags:* ${image.tags}\n👤 *Uploader:* ${image.user}\n👀 *Views:* ${image.views}\n⬇️ *Downloads:* ${image.downloads}\n❤️ *Likes:* ${image.likes}`;
+        const caption = `📸 <b>Tags:</b> ${image.tags}\n👤 <b>Uploader</b>: ${image.user}\n👀 <b>Views:</b> ${image.views}\n⬇️ <b>Downloads</b>: ${image.downloads}\n❤️ <b>Likes:</b> ${image.likes}`;
         
-        await ctx.replyWithPhoto(image.webformatURL, { caption, parse_mode: "Markdown" });
+        await ctx.replyWithPhoto(image.webformatURL, { caption, parse_mode: "HTML" });
     }
     
     
